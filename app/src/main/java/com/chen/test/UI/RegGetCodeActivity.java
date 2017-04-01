@@ -136,18 +136,18 @@ public class RegGetCodeActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void onComplete() {
                         Logger.e(entity.getMsg());
-                        if(entity.getCode()==0){
-                            Intent intent = new Intent(RegGetCodeActivity.this,InputCodeActivity.class);
-                            intent.putExtra("input","register");
+                        if (entity.getCode() == 0) {
+                            Intent intent = new Intent(RegGetCodeActivity.this, InputCodeActivity.class);
+                            intent.putExtra("input", "register");
                             intent.putExtra("phone", phone.getText().toString());
                             startActivity(intent);
-                        }else{
+                        } else {
                             Animation shake = AnimationUtils.loadAnimation(RegGetCodeActivity.this, R.anim.shake);
                             text.startAnimation(shake);
                             text.setTextColor(ContextCompat.getColor(RegGetCodeActivity.this, android.R.color.holo_red_light));
                             text.setText(entity.getMsg());
                         }
-                       // Toast.makeText(RegGetCodeActivity.this, entity.getMsg(), Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(RegGetCodeActivity.this, entity.getMsg(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }

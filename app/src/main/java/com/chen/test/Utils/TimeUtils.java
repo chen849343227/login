@@ -30,7 +30,7 @@ public class TimeUtils extends CountDownTimer {
 
     @Override
     public void onTick(long millisUntilFinished) {
-        tv.setText(millisUntilFinished/1000 + "s后可重新发送");
+        tv.setText(millisUntilFinished / 1000 + "s后可重新发送");
         tv.setEnabled(false);
         tv.setTextColor(ContextCompat.getColor(context, R.color.blueTextColor));
     }

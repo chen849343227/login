@@ -56,7 +56,7 @@ public class InputCodeActivity extends AppCompatActivity implements View.OnClick
         Intent intent = getIntent();
         input = intent.getStringExtra("input");
         phone = intent.getStringExtra("phone");
-        Log.e("input",input);
+        Log.e("input", input);
     }
 
     /**
@@ -84,10 +84,10 @@ public class InputCodeActivity extends AppCompatActivity implements View.OnClick
         } else if (input.equals("forget")) {
             time.start();
             text.setText("验证码已发送到以下手机,请在5分钟内完成重置");
-        }else if (input.equals("newPhone")) {
+        } else if (input.equals("newPhone")) {
             time.start();
             text.setText("验证码已发送到以下手机,请在5分钟内完成更换");
-        }else if(input.equals("modify")){
+        } else if (input.equals("modify")) {
             send.setEnabled(true);
             text.setText("点击发送验证码按钮发送验证码,请在5分钟内完成修改");
             send.setTextColor(ContextCompat.getColor(InputCodeActivity.this, R.color.pressed));

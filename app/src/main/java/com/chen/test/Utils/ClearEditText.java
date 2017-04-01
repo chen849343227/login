@@ -48,7 +48,7 @@ public class ClearEditText extends android.support.v7.widget.AppCompatEditText i
             rightDrawable = getResources().getDrawable(R.mipmap.qingchu3);
         }
         rightDrawable.setBounds(0, 0, rightDrawable.getIntrinsicWidth(), rightDrawable.getIntrinsicHeight());
-       // leftDrawable.setBounds(0, 0, leftDrawable.getIntrinsicWidth(), leftDrawable.getIntrinsicHeight());
+        // leftDrawable.setBounds(0, 0, leftDrawable.getIntrinsicWidth(), leftDrawable.getIntrinsicHeight());
         setOnFocusChangeListener(this);
         addTextChangedListener(this);
         // 默认隐藏图标

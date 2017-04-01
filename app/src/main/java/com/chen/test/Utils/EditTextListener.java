@@ -15,9 +15,10 @@ public class EditTextListener {
 
     /**
      * 有文字.有焦点(显示蓝色,和清除)
+     *
      * @param view
      */
-    public static void hasTextAndFocus(EditText view, Context context,int leftBitmap,int rightBitmap){
+    public static void hasTextAndFocus(EditText view, Context context, int leftBitmap, int rightBitmap) {
         Drawable leftDrawable = ContextCompat.getDrawable(context, leftBitmap);
         Drawable rightDrawable = ContextCompat.getDrawable(context, rightBitmap);
         leftDrawable.setBounds(0, 0, leftDrawable.getMinimumWidth(), leftDrawable.getMinimumHeight());
@@ -27,10 +28,11 @@ public class EditTextListener {
 
     /**
      * 没有文字,有焦点(显示蓝色,不显示清除)
+     *
      * @param view
      * @param context
      */
-    public static void noTextAndHasFocus(EditText view, Context context,int leftBitmap){
+    public static void noTextAndHasFocus(EditText view, Context context, int leftBitmap) {
         Drawable leftDrawable = ContextCompat.getDrawable(context, leftBitmap);
         leftDrawable.setBounds(0, 0, leftDrawable.getMinimumWidth(), leftDrawable.getMinimumHeight());
         view.setCompoundDrawables(leftDrawable, null, null, null);
@@ -38,10 +40,11 @@ public class EditTextListener {
 
     /**
      * 没有焦点（显示灰色,不显示清除）
+     *
      * @param view
      * @param context
      */
-    public static void noFocus(EditText view, Context context,int leftBitmap){
+    public static void noFocus(EditText view, Context context, int leftBitmap) {
         Drawable leftDrawable = ContextCompat.getDrawable(context, leftBitmap);
         leftDrawable.setBounds(0, 0, leftDrawable.getMinimumWidth(), leftDrawable.getMinimumHeight());
         view.setCompoundDrawables(leftDrawable, null, null, null);

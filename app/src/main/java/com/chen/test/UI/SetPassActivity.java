@@ -163,7 +163,7 @@ public class SetPassActivity extends AppCompatActivity {
      */
     private void register(String pass) {
         RetrofitService
-                .Register(phone,pass)
+                .Register(phone, pass)
                 .subscribe(new Observer<BaseEntity>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -184,7 +184,7 @@ public class SetPassActivity extends AppCompatActivity {
                     public void onComplete() {
                         Toast.makeText(SetPassActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
                         Logger.e(entity.getMsg());
-                        startActivity(new Intent(SetPassActivity.this,MainActivity.class));
+                        startActivity(new Intent(SetPassActivity.this, MainActivity.class));
                         finish();
                     }
                 });
