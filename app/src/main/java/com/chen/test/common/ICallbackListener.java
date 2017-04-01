@@ -5,7 +5,6 @@ package com.chen.test.common;
  */
 
 public interface ICallbackListener<T>{
-
     void onSuccess(T data);
 
     void onFail(String error);

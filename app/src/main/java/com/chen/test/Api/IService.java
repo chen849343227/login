@@ -14,7 +14,6 @@ import static com.chen.test.common.RetrofitService.CACHE_CONTROL_NETWORK;
  */
 
 public interface IService {
-
     @Headers(CACHE_CONTROL_NETWORK)
     @POST("Register")
     Observable<BaseEntity> register(@Query("user")String user, @Query("pass")String pass);
@@ -26,5 +25,4 @@ public interface IService {
     @Headers(CACHE_CONTROL_NETWORK)
     @POST("GetCheckCode")
     Observable<BaseEntity> getCheckCode(@Query("phone")String phone);
-
 }

@@ -35,7 +35,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitService {
 
-    private static final String BASEURL  = "http://192.168.31.68:8080/web/";
+    private static final String BASEURL = "http://192.168.31.68:8080/web/";
 
     private static IService service;
 
@@ -74,7 +74,6 @@ public class RetrofitService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(BASEURL)
                 .build();
-
         service = retrofit.create(IService.class);
     }
 
@@ -126,7 +125,6 @@ public class RetrofitService {
             //打印url信息
             Logger.w(request.url() + (request.body() != null ? "?" + _parseParams(request.body(), requestBuffer) : ""));
             final Response response = chain.proceed(request);
-
             return response;
         }
     };
@@ -140,17 +138,15 @@ public class RetrofitService {
     }
 
     /*--------------------------------- API ---------------------------------*/
-
-
     /**
      * 登录
+     *
      * @param user
      * @param pass
      * @return
      */
     public static Observable<BaseEntity> Login(String user, String pass) {
-
-        return service.Login(user,pass)
+        return service.Login(user, pass)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .subscribeOn(AndroidSchedulers.mainThread())
@@ -159,13 +155,13 @@ public class RetrofitService {
 
     /**
      * 注册
+     *
      * @param user
      * @param pass
      * @return
      */
     public static Observable<BaseEntity> Register(String user, String pass) {
-
-        return service.register(user,pass)
+        return service.register(user, pass)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .subscribeOn(AndroidSchedulers.mainThread())
@@ -174,10 +170,11 @@ public class RetrofitService {
 
     /**
      * 获取验证码
+     *
      * @param phone
      * @return
      */
-    public static Observable<BaseEntity> getCheckCode(String phone){
+    public static Observable<BaseEntity> getCheckCode(String phone) {
         return service.getCheckCode(phone)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
