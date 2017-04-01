@@ -17,7 +17,6 @@ import com.chen.test.R;
 public class ClearEditText extends android.support.v7.widget.AppCompatEditText implements View.OnFocusChangeListener, TextWatcher {
 
     private Drawable rightDrawable;
-    private Drawable leftDrawable;
     private boolean hasFocus;
 
     public ClearEditText(Context context) {
@@ -44,7 +43,6 @@ public class ClearEditText extends android.support.v7.widget.AppCompatEditText i
     private void init() {
         // getCompoundDrawables() Returns drawables for the left(0), top(1), right(2) and bottom(3)
         rightDrawable = getCompoundDrawables()[2];// 获取drawableRight
-        leftDrawable = getCompoundDrawables()[0];
         if (rightDrawable == null) {
             // 如果为空，即没有设置drawableRight，则使用R.mipmap.close这张图片
             rightDrawable = getResources().getDrawable(R.mipmap.qingchu3);

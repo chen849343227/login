@@ -37,7 +37,6 @@ public class InputCodeActivity extends AppCompatActivity implements View.OnClick
 
     String input;
     String phone;
-    int currentItem;
 
     TimeUtils time;
     private BaseEntity entity;

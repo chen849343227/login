@@ -172,6 +172,11 @@ public class RetrofitService {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
+    /**
+     * 获取验证码
+     * @param phone
+     * @return
+     */
     public static Observable<BaseEntity> getCheckCode(String phone){
         return service.getCheckCode(phone)
                 .subscribeOn(Schedulers.io())
