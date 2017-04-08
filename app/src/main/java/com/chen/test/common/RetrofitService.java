@@ -147,7 +147,7 @@ public class RetrofitService {
      * @return
      */
     public static Observable<BaseEntity> Login(String user, String pass) {
-        return service.Login(user, pass)
+        return service.login(user, pass)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .subscribeOn(AndroidSchedulers.mainThread())
@@ -182,4 +182,6 @@ public class RetrofitService {
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(AndroidSchedulers.mainThread());
     }
+
+
 }

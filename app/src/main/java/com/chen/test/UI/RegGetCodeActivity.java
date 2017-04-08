@@ -130,7 +130,7 @@ public class RegGetCodeActivity extends AppCompatActivity implements View.OnClic
 
                     @Override
                     public void onError(Throwable e) {
-
+                        text.setText(e.getMessage());
                     }
 
                     @Override

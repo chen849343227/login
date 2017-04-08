@@ -19,8 +19,8 @@ public interface IService {
     Observable<BaseEntity> register(@Query("user") String user, @Query("pass") String pass);
 
     @Headers(CACHE_CONTROL_NETWORK)
-    @POST("Login")
-    Observable<BaseEntity> Login(@Query("user") String user, @Query("pass") String pass);
+    @POST("login")
+    Observable<BaseEntity> login(@Query("user") String user, @Query("pass") String pass);
 
     @Headers(CACHE_CONTROL_NETWORK)
     @POST("GetCheckCode")
