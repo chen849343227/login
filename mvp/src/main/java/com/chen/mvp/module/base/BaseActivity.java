@@ -52,7 +52,7 @@ public abstract class BaseActivity<T extends IBasePresenter> extends AppCompatAc
 
     @Override
     public void showLoading() {
-        MyDialog.showProgressDialog(this);
+        MyDialog.showProgressDialog(this,"正在加载...");
     }
 
     @Override

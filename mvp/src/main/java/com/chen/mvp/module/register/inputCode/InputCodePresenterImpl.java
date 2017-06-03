@@ -5,8 +5,13 @@ import com.chen.mvp.bean.BaseInfo;
 import com.chen.mvp.utils.MobilePhone;
 import com.orhanobut.logger.Logger;
 
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
+import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 /**
  * Created by long on 17-4-7.
@@ -65,9 +70,14 @@ public class InputCodePresenterImpl implements IInputCodePresenter{
             mView.showToast("请输入正确位数的验证码");
             return;
         }
-        mView.showLoading();
         RetrofitService
                 .verifyCheckCode(code)
+                .doOnNext(new Consumer<BaseInfo>() {
+                    @Override
+                    public void accept(@NonNull BaseInfo info) throws Exception {
+                        mView.showLoading();
+                    }
+                })
                 .subscribe(new Observer<BaseInfo>() {
                     @Override
                     public void onSubscribe(Disposable d) {

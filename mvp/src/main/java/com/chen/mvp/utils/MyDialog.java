@@ -14,10 +14,10 @@ public class MyDialog {
     /**
      * 显示进入对话框
      */
-    public static void showProgressDialog(Context context) {
+    public static void showProgressDialog(Context context,String msg) {
         if (progressDialog == null) {
             progressDialog = new ProgressDialog(context);
-            progressDialog.setMessage("正在加载...");
+            progressDialog.setMessage(msg);
             progressDialog.setCanceledOnTouchOutside(false);
         }
         progressDialog.show();

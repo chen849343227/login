@@ -36,7 +36,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".module.register.setPass.SetPassActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

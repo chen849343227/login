@@ -34,7 +34,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitService {
 
-    private static final String BASEURL = "http://192.168.31.68:8080/web/";
+    private static final String BASEURL = "http://192.168.43.76:8080/web/";
 
     private static IBaseApi baseApi;
 
@@ -131,7 +131,7 @@ public class RetrofitService {
 
     @NonNull
     private static String _parseParams(RequestBody body, Buffer requestBuffer) throws UnsupportedEncodingException {
-        if (body.contentType() != null && !body.contentType().toString().contains("multipart")) {
+        if (body.contentType() != null ) {
             return URLDecoder.decode(requestBuffer.readUtf8(), "UTF-8");
         }
         return "null";
@@ -141,6 +141,7 @@ public class RetrofitService {
 
     /**
      * 登录
+     *
      * @param user 用户名
      * @param pass 密码
      * @return
@@ -155,6 +156,7 @@ public class RetrofitService {
 
     /**
      * 注册
+     *
      * @param user 用户名
      * @param pass 密码
      * @return
@@ -169,6 +171,7 @@ public class RetrofitService {
 
     /**
      * 获取验证码
+     *
      * @param phone 手机号
      * @return
      */
@@ -182,10 +185,11 @@ public class RetrofitService {
 
     /**
      * 验证短信验证码
+     *
      * @param code 短信验证码
      * @return
      */
-    public static Observable<BaseInfo> verifyCheckCode(String code){
+    public static Observable<BaseInfo> verifyCheckCode(String code) {
         return baseApi.verifyCheckCode(code)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())

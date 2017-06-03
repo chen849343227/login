@@ -70,11 +70,6 @@ public class RegGetCodeActivity extends BaseActivity<RegGetCodePresenterImpl> im
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
         text.setTextColor(ContextCompat.getColor(RegGetCodeActivity.this, android.R.color.black));
@@ -98,6 +93,7 @@ public class RegGetCodeActivity extends BaseActivity<RegGetCodePresenterImpl> im
     public void showAnimation(String msg) {
         Animation shake = AnimationUtils.loadAnimation(RegGetCodeActivity.this, R.anim.shake);
         phone.startAnimation(shake);
+        text.setText("请输入正确的手机号!");
         text.setTextColor(ContextCompat.getColor(RegGetCodeActivity.this, android.R.color.holo_red_light));
         phone.setTextColor(ContextCompat.getColor(RegGetCodeActivity.this, android.R.color.holo_red_light));
     }

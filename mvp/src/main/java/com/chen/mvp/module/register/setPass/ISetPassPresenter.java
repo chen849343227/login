@@ -12,4 +12,5 @@ import com.chen.mvp.utils.ClearEditText;
 public interface ISetPassPresenter extends IBasePresenter {
 
     void getData(String user, String pass,String pass2);
+
 }

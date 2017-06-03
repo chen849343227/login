@@ -3,6 +3,7 @@ package com.chen.mvp.api;
 import com.chen.mvp.bean.BaseInfo;
 
 import io.reactivex.Observable;
+import retrofit2.Call;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;

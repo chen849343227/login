@@ -27,9 +27,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    // leakcanary
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
     //okhttp
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.squareup.okio:okio:1.7.0'
@@ -50,6 +53,7 @@ dependencies {
     compile 'com.google.dagger:dagger:2.6'
     //butterknife
     compile 'com.jakewharton:butterknife:8.2.1'
+    testCompile 'junit:junit:4.12'
     apt 'com.google.dagger:dagger-compiler:2.6'
     apt 'com.jakewharton:butterknife-compiler:8.2.1'
 }

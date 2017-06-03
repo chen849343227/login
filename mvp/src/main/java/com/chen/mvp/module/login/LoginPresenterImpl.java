@@ -45,7 +45,8 @@ public class LoginPresenterImpl implements IBasePresenter {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        e.printStackTrace();
+                        mView.hideLoading();
                     }
 
                     @Override
